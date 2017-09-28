@@ -43,7 +43,7 @@ function getResult(input){
 		if (isNaN(result) || result === undefined) {
 			return "Error";
 		}
-		return +result.toFixed(12);
+		return +result.toPrecision(14);
 	}
 	return "Error";
 }
