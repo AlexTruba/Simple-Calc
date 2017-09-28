@@ -63,14 +63,13 @@ function parse(inp){
 					&& opStack.peek().type !== "Left Parenthesis") {
 					outQueue.push(opStack.pop());
 				}
-				//Выкинуть открывающую скобку из стека, но не добавлять в очередь вывода.
-				opStack.pop();
-
 				//Если стек закончился до того, как был встречен токен открывающая скобка, то в выражении пропущена скобка.
 				if(opStack.length == 0){
 					// console.log("Unmatched parentheses");
 					isError = true;
 				}
+				//Выкинуть открывающую скобку из стека, но не добавлять в очередь вывода.
+				opStack.pop();
 			}
 		}	
 	});
